@@ -26,19 +26,42 @@
 %hook SBApplicationInfo
 
 - (bool)wantsFullScreen {
+    %log;
     return false;
 }
 
 - (bool)wantsExclusiveForeground {
+    %log;
     return false;
 }
 
 - (bool)disablesScreenJail {
+    %log;
     return true;
 }
 
 - (bool)disablesClassicMode {
+    %log;
     return true;
 }
 
+- (bool)_supportsApplicationType:(int)arg1 {
+    %log;
+    return true;
+}
+
+- (bool)preventsLaunchInterfaceSplitting {
+    %log;
+    return false;
+}
+
 %end
+
+%hook SBAssistantRootViewController 
+
+- (_Bool)wantsFullScreenLayout {
+    return false;
+}
+
+%end
+
